@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BibliaRouteImport } from './routes/biblia'
+import { Route as ContaRouteImport } from './routes/conta'
 import { Route as GratidaoRouteImport } from './routes/gratidao'
 import { Route as InstalarRouteImport } from './routes/instalar'
 import { Route as PlanoRouteImport } from './routes/plano'
@@ -29,6 +30,11 @@ const AuthRoute = AuthRouteImport.update({
 const BibliaRoute = BibliaRouteImport.update({
   id: '/biblia',
   path: '/biblia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContaRoute = ContaRouteImport.update({
+  id: '/conta',
+  path: '/conta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GratidaoRoute = GratidaoRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
@@ -68,20 +76,24 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/biblia' | '/gratidao' | '/instalar' | '/plano'
+  fullPaths:
+    '/' | '/auth' | '/biblia' | '/conta' | '/gratidao' | '/instalar' | '/plano'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/biblia' | '/gratidao' | '/instalar' | '/plano'
+  to:
+    '/' | '/auth' | '/biblia' | '/conta' | '/gratidao' | '/instalar' | '/plano'
   id:
     | '__root__'
     | '/'
     | '/auth'
     | '/biblia'
+    | '/conta'
     | '/gratidao'
     | '/instalar'
     | '/plano'
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRoute
+  ContaRoute: typeof ContaRoute
   GratidaoRoute: typeof GratidaoRoute
   InstalarRoute: typeof InstalarRoute
   PlanoRoute: typeof PlanoRoute
@@ -117,6 +130,13 @@ declare module '@tanstack/react-router' {
       path: '/biblia'
       fullPath: '/biblia'
       preLoaderRoute: typeof BibliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conta': {
+      id: '/conta'
+      path: '/conta'
+      fullPath: '/conta'
+      preLoaderRoute: typeof ContaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gratidao': {
@@ -147,6 +167,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
   BibliaRoute: BibliaRoute,
+  ContaRoute: ContaRoute,
   GratidaoRoute: GratidaoRoute,
   InstalarRoute: InstalarRoute,
   PlanoRoute: PlanoRoute,
