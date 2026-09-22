@@ -7,13 +7,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { useAlternarDestaque, useBiblia, useDestaques } from "@/hooks/useDados";
 import { buscar, chaveRef } from "@/lib/biblia";
 
-type Busca = { l?: string; c?: number; q?: string };
+type Busca = { l?: string | undefined; c?: number | undefined; q?: string | undefined };
 
 export const Route = createFileRoute("/biblia")({
   validateSearch: (b: Record<string, unknown>): Busca => ({
-    l: typeof b.l === "string" ? b.l : undefined,
-    c: b.c ? Number(b.c) : undefined,
-    q: typeof b.q === "string" ? b.q : undefined,
+    l: typeof b["l"] === "string" ? b["l"] : undefined,
+    c: b["c"] ? Number(b["c"]) : undefined,
+    q: typeof b["q"] === "string" ? b["q"] : undefined,
   }),
   head: () => ({
     meta: [

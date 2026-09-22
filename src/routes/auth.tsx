@@ -6,11 +6,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { fusoDoUsuario } from "@/lib/datas";
 
-type Busca = { modo?: "entrar" | "criar" };
+type Busca = { modo?: "entrar" | "criar" | undefined };
 
 export const Route = createFileRoute("/auth")({
   validateSearch: (busca: Record<string, unknown>): Busca => ({
-    modo: busca.modo === "entrar" ? "entrar" : "criar",
+    modo: busca["modo"] === "entrar" ? "entrar" : "criar",
   }),
   head: () => ({
     meta: [
