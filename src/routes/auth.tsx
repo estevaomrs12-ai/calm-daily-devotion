@@ -14,12 +14,12 @@ export const Route = createFileRoute("/auth")({
   }),
   head: () => ({
     meta: [
-      { title: "Entrar no Alvorada" },
+      { title: "Entrar no Alvorada com Deus" },
       {
         name: "description",
         content: "Crie sua conta ou entre para guardar suas anotações, ofensiva e diário na nuvem.",
       },
-      { property: "og:title", content: "Entrar no Alvorada" },
+      { property: "og:title", content: "Entrar no Alvorada com Deus" },
       { property: "og:description", content: "Acesse sua caminhada diária em qualquer aparelho." },
     ],
   }),
@@ -93,7 +93,7 @@ function Pagina() {
       <div className="mx-auto w-full max-w-md">
         <Link to="/" className="flex items-center gap-3">
           <img src="/icone-192.png" alt="" width={40} height={40} className="size-10" />
-          <span className="serif text-xl">Alvorada</span>
+          <span className="serif text-xl">Alvorada com Deus</span>
         </Link>
 
         <h1 className="mt-10 text-3xl">{criar ? "Criar sua conta" : "Bem-vindo de volta"}</h1>
@@ -157,7 +157,7 @@ function Pagina() {
                 className="mt-1 size-5 shrink-0 accent-[var(--primary)]"
               />
               <span>
-                Autorizo o Alvorada a guardar minhas anotações, destaques e diário de gratidão, que
+                Autorizo o Alvorada com Deus a guardar minhas anotações, destaques e diário de gratidão, que
                 podem revelar convicção religiosa (dado sensível na LGPD). Posso exportar ou apagar
                 tudo quando quiser, na tela Conta.
               </span>

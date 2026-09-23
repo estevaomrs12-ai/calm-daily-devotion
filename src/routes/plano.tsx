@@ -11,13 +11,13 @@ import { calcularOfensiva, diaLocal, diferencaDias } from "@/lib/datas";
 export const Route = createFileRoute("/plano")({
   head: () => ({
     meta: [
-      { title: "Plano de leitura e ofensiva — Alvorada" },
+      { title: "Plano de leitura e ofensiva — Alvorada com Deus" },
       {
         name: "description",
         content:
           "Escolha um plano de leitura, acompanhe o dia de hoje e mantenha sua ofensiva calculada no seu fuso horário.",
       },
-      { property: "og:title", content: "Plano de leitura e ofensiva — Alvorada" },
+      { property: "og:title", content: "Plano de leitura e ofensiva — Alvorada com Deus" },
       { property: "og:description", content: "Planos de 25 a 90 dias com check-in diário." },
     ],
   }),

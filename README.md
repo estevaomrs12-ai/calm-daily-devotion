@@ -1,4 +1,4 @@
-# Alvorada
+# Alvorada com Deus
 
 irei te mandar um app PwA e quero que você faça tipo uma cópia https://jornada-de-fe.vercel.app
 ## Caminhada Diária — PWA Devocional Original (nome provisório, você escolhe o definitivo)

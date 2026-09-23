@@ -77,15 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#c9622f" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
-      { name: "apple-mobile-web-app-title", content: "Alvorada" },
+      { name: "apple-mobile-web-app-title", content: "Alvorada com Deus" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-      { title: "Alvorada — sua caminhada diária na Palavra" },
+      { title: "Alvorada com Deus — sua caminhada diária na Palavra" },
       {
         name: "description",
         content:
-          "Alvorada é um app instalável com a Bíblia completa, versículo do dia, plano de leitura com ofensiva e diário de gratidão.",
+          "Alvorada com Deus é um app instalável com a Bíblia completa, versículo do dia, plano de leitura com ofensiva e diário de gratidão.",
       },
-      { property: "og:title", content: "Alvorada — sua caminhada diária na Palavra" },
+      { property: "og:title", content: "Alvorada com Deus — sua caminhada diária na Palavra" },
       {
         property: "og:description",
         content: "Bíblia completa, versículo do dia, ofensiva de leitura e diário de gratidão. Funciona offline.",

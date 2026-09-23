@@ -6,13 +6,13 @@ import { Shell, Titulo } from "@/components/Shell";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "Instalar o Alvorada no celular" },
+      { title: "Instalar o Alvorada com Deus no celular" },
       {
         name: "description",
         content:
-          "Passo a passo para adicionar o Alvorada à tela de início no Android e no iPhone e usar offline.",
+          "Passo a passo para adicionar o Alvorada com Deus à tela de início no Android e no iPhone e usar offline.",
       },
-      { property: "og:title", content: "Instalar o Alvorada no celular" },
+      { property: "og:title", content: "Instalar o Alvorada com Deus no celular" },
       { property: "og:description", content: "Android e iPhone, em poucos toques." },
     ],
   }),
@@ -34,7 +34,7 @@ function Pagina() {
           <li>
             Escolha <strong>Instalar app</strong> ou <strong>Adicionar à tela inicial</strong>.
           </li>
-          <li>Confirme. O ícone do Alvorada aparece junto dos seus outros apps.</li>
+          <li>Confirme. O ícone do Alvorada com Deus aparece junto dos seus outros apps.</li>
         </ol>
       </section>
 

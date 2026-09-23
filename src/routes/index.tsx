@@ -23,13 +23,13 @@ import { calcularOfensiva, dataLegivel, diaLocal, diferencaDias, saudacao } from
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alvorada — comece o dia na Palavra" },
+      { title: "Alvorada com Deus — comece o dia na Palavra" },
       {
         name: "description",
         content:
           "Versículo do dia, leitura do plano, ofensiva e diário de gratidão em uma tela calma. Instale no celular e use offline.",
       },
-      { property: "og:title", content: "Alvorada — comece o dia na Palavra" },
+      { property: "og:title", content: "Alvorada com Deus — comece o dia na Palavra" },
       {
         property: "og:description",
         content: "Bíblia completa em português, plano de leitura com ofensiva e diário de gratidão.",
@@ -51,7 +51,7 @@ function BoasVindas() {
       <div className="mx-auto w-full max-w-xl px-5 pb-16 pt-10">
         <div className="flex items-center gap-3">
           <img src="/icone-192.png" alt="" width={44} height={44} className="size-11" />
-          <span className="serif text-2xl">Alvorada</span>
+          <span className="serif text-2xl">Alvorada com Deus</span>
         </div>
 
         <h1 className="mt-10 text-4xl leading-[1.15]">
