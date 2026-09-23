@@ -193,7 +193,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      aplicar_compra: {
+        Args: { _email: string; _pago: boolean }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
