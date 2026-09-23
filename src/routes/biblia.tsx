@@ -17,13 +17,13 @@ export const Route = createFileRoute("/biblia")({
   }),
   head: () => ({
     meta: [
-      { title: "Bíblia completa — Alvorada" },
+      { title: "Bíblia completa — Alvorada com Deus" },
       {
         name: "description",
         content:
           "Leia a Bíblia inteira em português por livro, capítulo e versículo, com busca e destaques. Disponível offline.",
       },
-      { property: "og:title", content: "Bíblia completa — Alvorada" },
+      { property: "og:title", content: "Bíblia completa — Alvorada com Deus" },
       { property: "og:description", content: "Livro, capítulo, versículo e busca — tudo offline." },
     ],
   }),

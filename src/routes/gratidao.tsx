@@ -11,12 +11,12 @@ import { dataLegivel } from "@/lib/datas";
 export const Route = createFileRoute("/gratidao")({
   head: () => ({
     meta: [
-      { title: "Diário de gratidão — Alvorada" },
+      { title: "Diário de gratidão — Alvorada com Deus" },
       {
         name: "description",
         content: "Escreva em uma linha o que você agradece hoje. Tudo salvo na sua conta, só para você.",
       },
-      { property: "og:title", content: "Diário de gratidão — Alvorada" },
+      { property: "og:title", content: "Diário de gratidão — Alvorada com Deus" },
       { property: "og:description", content: "Um registro por dia, privado e sincronizado." },
     ],
   }),

@@ -13,12 +13,12 @@ import { fusoDoUsuario } from "@/lib/datas";
 export const Route = createFileRoute("/conta")({
   head: () => ({
     meta: [
-      { title: "Sua conta e seus dados — Alvorada" },
+      { title: "Sua conta e seus dados — Alvorada com Deus" },
       {
         name: "description",
         content: "Veja seu consentimento, exporte tudo o que você escreveu ou apague sua conta a qualquer momento.",
       },
-      { property: "og:title", content: "Sua conta e seus dados — Alvorada" },
+      { property: "og:title", content: "Sua conta e seus dados — Alvorada com Deus" },
       { property: "og:description", content: "Exportar, apagar e sair — controle total dos seus dados." },
     ],
   }),

@@ -15,7 +15,7 @@ export function Bloqueio() {
       <div className="mx-auto w-full max-w-xl px-5 pb-16 pt-12">
         <div className="flex items-center gap-3">
           <img src="/icone-192.png" alt="" width={44} height={44} className="size-11" />
-          <span className="serif text-2xl">Alvorada</span>
+          <span className="serif text-2xl">Alvorada com Deus</span>
         </div>
         <h1 className="mt-10 text-3xl leading-tight">Falta só liberar seu acesso.</h1>
         <p className="mt-4 text-lg text-muted-foreground">
