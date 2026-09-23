@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { BookOpen, Flame, Sun, Sparkles, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
+import { usePerfil } from "@/hooks/useDados";
+import { Bloqueio } from "@/components/Bloqueio";
 
 const ITENS = [
   { to: "/", rotulo: "Hoje", Icone: Sun },
@@ -12,6 +14,9 @@ const ITENS = [
 
 export function Shell({ children }: { children: ReactNode }) {
   const caminho = useRouterState({ select: (s) => s.location.pathname });
+  const { data: perfil } = usePerfil();
+  if (perfil && !perfil.ativo) return <Bloqueio />;
+
 
   return (
     <div className="min-h-screen suave pb-28">

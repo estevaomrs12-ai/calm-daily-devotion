@@ -68,6 +68,36 @@ export type Database = {
         }
         Relationships: []
       }
+      compras: {
+        Row: {
+          created_at: string
+          email: string
+          evento: string | null
+          id: string
+          pedido: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          evento?: string | null
+          id?: string
+          pedido?: string | null
+          status: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          evento?: string | null
+          id?: string
+          pedido?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       destaques: {
         Row: {
           created_at: string
@@ -163,7 +193,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      aplicar_compra: {
+        Args: { _email: string; _pago: boolean }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
