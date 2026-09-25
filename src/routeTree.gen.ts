@@ -12,11 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BibliaRouteImport } from './routes/biblia'
+import { Route as ComeceRouteImport } from './routes/comece'
 import { Route as ContaRouteImport } from './routes/conta'
 import { Route as GratidaoRouteImport } from './routes/gratidao'
 import { Route as InstalarRouteImport } from './routes/instalar'
 import { Route as PlanoRouteImport } from './routes/plano'
-import { Route as VendaRouteImport } from './routes/venda'
 import { Route as ApiPublicCaktoWebhookRouteImport } from './routes/api/public/cakto-webhook'
 
 const IndexRoute = IndexRouteImport.update({
@@ -32,6 +32,11 @@ const AuthRoute = AuthRouteImport.update({
 const BibliaRoute = BibliaRouteImport.update({
   id: '/biblia',
   path: '/biblia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComeceRoute = ComeceRouteImport.update({
+  id: '/comece',
+  path: '/comece',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContaRoute = ContaRouteImport.update({
@@ -54,11 +59,6 @@ const PlanoRoute = PlanoRouteImport.update({
   path: '/plano',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VendaRoute = VendaRouteImport.update({
-  id: '/venda',
-  path: '/venda',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiPublicCaktoWebhookRoute = ApiPublicCaktoWebhookRouteImport.update({
   id: '/api/public/cakto-webhook',
   path: '/api/public/cakto-webhook',
@@ -69,22 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/comece': typeof ComeceRoute
   '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
-  '/venda': typeof VendaRoute
   '/api/public/cakto-webhook': typeof ApiPublicCaktoWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/comece': typeof ComeceRoute
   '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
-  '/venda': typeof VendaRoute
   '/api/public/cakto-webhook': typeof ApiPublicCaktoWebhookRoute
 }
 export interface FileRoutesById {
@@ -92,11 +92,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRoute
+  '/comece': typeof ComeceRoute
   '/conta': typeof ContaRoute
   '/gratidao': typeof GratidaoRoute
   '/instalar': typeof InstalarRoute
   '/plano': typeof PlanoRoute
-  '/venda': typeof VendaRoute
   '/api/public/cakto-webhook': typeof ApiPublicCaktoWebhookRoute
 }
 export interface FileRouteTypes {
@@ -105,33 +105,33 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/biblia'
+    | '/comece'
     | '/conta'
     | '/gratidao'
     | '/instalar'
     | '/plano'
-    | '/venda'
     | '/api/public/cakto-webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth'
     | '/biblia'
+    | '/comece'
     | '/conta'
     | '/gratidao'
     | '/instalar'
     | '/plano'
-    | '/venda'
     | '/api/public/cakto-webhook'
   id:
     | '__root__'
     | '/'
     | '/auth'
     | '/biblia'
+    | '/comece'
     | '/conta'
     | '/gratidao'
     | '/instalar'
     | '/plano'
-    | '/venda'
     | '/api/public/cakto-webhook'
   fileRoutesById: FileRoutesById
 }
@@ -139,11 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRoute
+  ComeceRoute: typeof ComeceRoute
   ContaRoute: typeof ContaRoute
   GratidaoRoute: typeof GratidaoRoute
   InstalarRoute: typeof InstalarRoute
   PlanoRoute: typeof PlanoRoute
-  VendaRoute: typeof VendaRoute
   ApiPublicCaktoWebhookRoute: typeof ApiPublicCaktoWebhookRoute
 }
 
@@ -168,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/biblia'
       fullPath: '/biblia'
       preLoaderRoute: typeof BibliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comece': {
+      id: '/comece'
+      path: '/comece'
+      fullPath: '/comece'
+      preLoaderRoute: typeof ComeceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/conta': {
@@ -198,13 +205,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/venda': {
-      id: '/venda'
-      path: '/venda'
-      fullPath: '/venda'
-      preLoaderRoute: typeof VendaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/public/cakto-webhook': {
       id: '/api/public/cakto-webhook'
       path: '/api/public/cakto-webhook'
@@ -219,11 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
   BibliaRoute: BibliaRoute,
+  ComeceRoute: ComeceRoute,
   ContaRoute: ContaRoute,
   GratidaoRoute: GratidaoRoute,
   InstalarRoute: InstalarRoute,
   PlanoRoute: PlanoRoute,
-  VendaRoute: VendaRoute,
   ApiPublicCaktoWebhookRoute: ApiPublicCaktoWebhookRoute,
 }
 export const routeTree = rootRouteImport
