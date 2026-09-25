@@ -17,7 +17,7 @@ import {
 import celular from "@/assets/celular-alvorada.png";
 import { CHECKOUT_CAKTO } from "@/components/Bloqueio";
 
-export const Route = createFileRoute("/venda")({
+export const Route = createFileRoute("/comece")({
   head: () => ({
     meta: [
       {
@@ -38,10 +38,10 @@ export const Route = createFileRoute("/venda")({
           "Bíblia completa, versículo do dia, ofensiva de leitura e diário de gratidão. Pagamento único de R$ 27,90 com garantia de 7 dias.",
       },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: "https://calm-daily-devotion.lovable.app/venda" },
+      { property: "og:url", content: "https://calm-daily-devotion.lovable.app/comece" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://calm-daily-devotion.lovable.app/venda" }],
+    links: [{ rel: "canonical", href: "https://calm-daily-devotion.lovable.app/comece" }],
   }),
   component: PaginaVenda,
 });
