@@ -360,7 +360,7 @@ function PaginaVenda() {
           </div>
         </section>
 
-        <footer className="bg-[#431407] px-5 pb-4 pt-2 text-center text-xs text-[#d6d3d1]">
+        <footer className="bg-[#431407] px-5 pb-28 pt-2 text-center text-xs text-[#d6d3d1]">
           <p>Alvorada com Deus · Pagamento processado com segurança pela Cakto</p>
           <p className="mt-2 pb-4">© 2026 Alvorada com Deus. Todos os direitos reservados.</p>
         </footer>
