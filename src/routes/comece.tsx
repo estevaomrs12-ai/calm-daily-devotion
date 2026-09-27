@@ -61,7 +61,7 @@ function BotaoComprar({
       href={CHECKOUT_CAKTO}
       target="_blank"
       rel="noopener noreferrer"
-      className={`toque flex items-center justify-center rounded-xl bg-amber-400 text-base font-extrabold uppercase tracking-wide text-slate-900 shadow-[0_0_28px_rgba(245,158,11,0.45)] transition-transform active:scale-[0.98] hover:bg-amber-300 ${className ?? ""}`}
+      className={`toque flex items-center justify-center rounded-full bg-gradient-to-r from-[#c2410c] to-[#f59e0b] text-base font-bold text-white shadow-[0_6px_24px_rgba(194,65,12,0.45)] transition-transform hover:brightness-110 active:scale-[0.98] ${className ?? ""}`}
     >
       {children}
     </a>
@@ -80,60 +80,64 @@ function Card({
   numero: string;
 }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-amber-400/50">
-      <div className="flex items-center gap-3">
-        <div className="flex size-12 items-center justify-center rounded-xl bg-amber-400/15">
-          <span className="text-amber-400">{icone}</span>
+    <div className="rounded-3xl border border-[#fbbf24]/20 bg-white/[0.07] p-6 transition-colors hover:border-[#fbbf24]/50">
+      <div className="flex items-center justify-between gap-3">
+        <div className="amanhecer flex size-12 items-center justify-center rounded-2xl text-white">
+          {icone}
         </div>
-        <span className="text-sm font-bold tracking-widest text-amber-400/70">{numero}</span>
+        <span className="serif text-lg text-[#fbbf24]/80">{numero}</span>
       </div>
-      <h3 className="mt-4 text-xl leading-snug text-white">{titulo}</h3>
-      <p className="mt-2 text-base leading-relaxed text-slate-400">{texto}</p>
+      <h3 className="mt-4 text-xl leading-snug text-[#fff7ed]">{titulo}</h3>
+      <p className="mt-2 text-base leading-relaxed text-[#fed7aa]/85">{texto}</p>
     </div>
   );
 }
 
 function DorItem({ texto }: { texto: string }) {
   return (
-    <div className="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-4">
-      <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-red-100">
-        <X className="size-4 text-red-500" strokeWidth={3} />
+    <div className="superficie flex items-start gap-4 p-4">
+      <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#fca5a5]">
+        <X className="size-4 text-[#7f1d1d]" strokeWidth={3} />
       </div>
-      <p className="text-sm leading-relaxed text-slate-600 sm:text-base">{texto}</p>
+      <p className="text-base leading-relaxed text-[#44403c]">{texto}</p>
     </div>
   );
 }
 
 function Duvida({ pergunta, resposta }: { pergunta: string; resposta: string }) {
   return (
-    <details className="group rounded-xl border border-slate-200 bg-white p-4">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold text-slate-900 sm:text-base">
+    <details className="superficie group p-5">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-[#292524]">
         {pergunta}
-        <ChevronDown className="size-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+        <ChevronDown className="size-5 shrink-0 text-[#78716c] transition-transform group-open:rotate-180" />
       </summary>
-      <p className="mt-3 text-sm leading-relaxed text-slate-500 sm:text-base">{resposta}</p>
+      <p className="mt-3 text-base leading-relaxed text-[#57534e]">{resposta}</p>
     </details>
   );
 }
 
 function PaginaVenda() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#fef3c7]">
       <div className="mx-auto w-full max-w-xl overflow-x-hidden">
         {/* Hero */}
-        <header className="relative overflow-hidden bg-gradient-to-b from-[#0f172a] via-[#1e1b4b] to-[#f59e0b] px-5 pt-10 pb-16 text-center">
-          <div className="pointer-events-none absolute left-1/2 top-0 size-96 -translate-x-1/2 rounded-full bg-amber-400/20 blur-[120px]" />
+        <header className="relative overflow-hidden px-5 pt-10 pb-16 text-center"
+          style={{
+            background:
+              "linear-gradient(180deg, #3b1f0b 0%, #7c2d12 35%, #c2410c 65%, #f59e0b 100%)",
+          }}>
+          <div className="pointer-events-none absolute left-1/2 top-24 size-96 -translate-x-1/2 rounded-full bg-[#fbbf24]/40 blur-[110px]" />
 
           <div className="relative z-10">
             <div className="flex items-center justify-center gap-3">
               <img src="/icone-192.png" alt="" width={40} height={40} className="size-10" />
-              <span className="text-xl font-bold text-white">Alvorada com Deus</span>
+              <span className="serif text-xl font-semibold text-[#fff7ed]">Alvorada com Deus</span>
             </div>
 
-            <h1 className="mt-10 text-4xl font-bold leading-tight tracking-tight text-white">
-              Comece cada manhã na <span className="text-amber-300">presença de Deus</span>.
+            <h1 className="mt-10 text-4xl font-bold leading-tight text-white">
+              Comece cada manhã na <span className="text-[#fde68a]">presença de Deus</span>.
             </h1>
-            <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-indigo-100/90">
+            <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-[#ffedd5]/95">
               Bíblia completa, versículo do dia, plano de leitura com ofensiva, devocional guiado e
               diário de gratidão — tudo em um só lugar, calmo e simples, direto no seu celular.
             </p>
@@ -143,33 +147,33 @@ function PaginaVenda() {
               alt="App Alvorada com Deus no celular, com o versículo do dia"
               width={1024}
               height={1536}
-              className="mx-auto mt-10 w-full max-w-xs rounded-3xl object-cover shadow-2xl ring-4 ring-white/20"
+              className="mx-auto mt-10 w-full max-w-xs rounded-3xl object-cover shadow-2xl ring-4 ring-[#fde68a]/40"
             />
 
             {/* Preço */}
-            <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-6 text-left shadow-2xl backdrop-blur-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
+            <div className="relative mt-10 overflow-hidden rounded-3xl bg-white p-6 text-left shadow-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c2410c]">
                 Acesso único · Pagamento único
               </p>
               <div className="mt-2 flex items-baseline gap-2">
-                <p className="text-4xl font-extrabold tracking-tight text-white">{PRECO}</p>
-                <p className="text-sm text-white/70">para sempre</p>
+                <p className="serif text-4xl font-semibold text-[#292524]">{PRECO}</p>
+                <p className="text-sm font-semibold text-[#78716c]">para sempre</p>
               </div>
-              <p className="mt-1 text-sm text-white/70">
+              <p className="mt-1 text-sm text-[#78716c]">
                 Sem mensalidade, sem renovação automática, sem cobrança de novo.
               </p>
               <BotaoComprar className="mt-5 w-full">Quero começar hoje</BotaoComprar>
-              <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <ul className="mt-4 space-y-2 text-sm text-[#57534e]">
                 <li className="flex items-center gap-2">
-                  <Check className="size-4 shrink-0 text-amber-300" strokeWidth={3} /> Acesso
+                  <Check className="size-4 shrink-0 text-[#c2410c]" strokeWidth={3} /> Acesso
                   imediato após o pagamento
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="size-4 shrink-0 text-amber-300" strokeWidth={3} /> Garantia de 7
+                  <Check className="size-4 shrink-0 text-[#c2410c]" strokeWidth={3} /> Garantia de 7
                   dias com reembolso
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="size-4 shrink-0 text-amber-300" strokeWidth={3} /> Pagamento
+                  <Check className="size-4 shrink-0 text-[#c2410c]" strokeWidth={3} /> Pagamento
                   seguro pela Cakto
                 </li>
               </ul>
@@ -178,9 +182,9 @@ function PaginaVenda() {
         </header>
 
         {/* Dor */}
-        <section className="bg-white px-5 py-16">
+        <section className="bg-[#fffbf2] px-5 py-16">
           <div className="mx-auto max-w-md">
-            <h2 className="text-center text-3xl leading-snug text-slate-900">
+            <h2 className="text-center text-3xl leading-snug text-[#292524]">
               Você já abriu a Bíblia com vontade… e parou no terceiro dia?
             </h2>
             <div className="mt-8 space-y-3">
@@ -188,7 +192,7 @@ function PaginaVenda() {
               <DorItem texto="A leitura “de um dia” vira “um dia eu leio”." />
               <DorItem texto="Não é falta de fé — é falta de um caminho simples." />
             </div>
-            <p className="mt-8 text-lg leading-relaxed text-slate-600">
+            <p className="mt-8 text-lg leading-relaxed text-[#44403c]">
               O Alvorada com Deus foi feito exatamente para isso: um momento calmo com a Palavra,
               uma ação por vez, todos os dias — que caiba nos seus minutos da manhã e te chame de
               volta no dia seguinte.
@@ -197,10 +201,14 @@ function PaginaVenda() {
         </section>
 
         {/* O que você recebe */}
-        <section className="-mt-10 relative z-10 rounded-t-[40px] bg-slate-900 px-5 py-16">
+        <section
+          className="px-5 py-16"
+          style={{
+            background: "linear-gradient(180deg, #431407 0%, #7c2d12 100%)",
+          }}>
           <div className="mx-auto max-w-md">
-            <h2 className="text-center text-3xl leading-snug text-white">O que você recebe</h2>
-            <p className="mt-3 text-center text-lg text-slate-400">
+            <h2 className="text-center text-3xl leading-snug text-[#fff7ed]">O que você recebe</h2>
+            <p className="mt-3 text-center text-lg text-[#fdba74]/90">
               Tudo já dentro do app, liberado na hora.
             </p>
             <div className="mt-8 space-y-4">
@@ -245,9 +253,9 @@ function PaginaVenda() {
         </section>
 
         {/* Como funciona */}
-        <section className="bg-white px-5 py-16">
+        <section className="bg-[#fffbf2] px-5 py-16">
           <div className="mx-auto max-w-md">
-            <h2 className="text-3xl leading-snug text-slate-900">Como funciona</h2>
+            <h2 className="text-3xl leading-snug text-[#292524]">Como funciona</h2>
             <ol className="mt-6 space-y-4">
               {[
                 {
@@ -275,16 +283,13 @@ function PaginaVenda() {
                     "Versículo do dia, leitura do plano, check-in e gratidão. Cinco minutos que mudam o tom da manhã.",
                 },
               ].map(({ icone, titulo, texto }, i) => (
-                <li
-                  key={i}
-                  className="flex gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-5"
-                >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-bold text-slate-900">
+                <li key={i} className="superficie flex gap-4 p-5">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#c2410c] to-[#f59e0b] text-sm font-bold text-white">
                     {i + 1}
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">{titulo}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-500">{texto}</p>
+                    <p className="font-semibold text-[#292524]">{titulo}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-[#78716c]">{texto}</p>
                   </div>
                 </li>
               ))}
@@ -293,14 +298,14 @@ function PaginaVenda() {
         </section>
 
         {/* Garantia */}
-        <section className="bg-white px-5 pb-8">
+        <section className="bg-[#fffbf2] px-5 pb-8">
           <div className="mx-auto max-w-md">
-            <div className="rounded-3xl border-2 border-amber-200 bg-amber-50 p-6">
+            <div className="rounded-3xl border-2 border-[#fbbf24] bg-[#fef3c7] p-6">
               <div className="flex items-center gap-4">
-                <ShieldCheck className="size-10 shrink-0 text-amber-600" />
-                <h2 className="text-2xl leading-snug text-slate-900">Garantia de 7 dias</h2>
+                <ShieldCheck className="size-10 shrink-0 text-[#c2410c]" />
+                <h2 className="text-2xl leading-snug text-[#292524]">Garantia de 7 dias</h2>
               </div>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">
+              <p className="mt-3 text-base leading-relaxed text-[#57534e]">
                 Comprou e não era o que esperava? Em até 7 dias você solicita o reembolso direto na
                 plataforma de pagamento. O risco é nosso; a caminhada é sua.
               </p>
@@ -309,9 +314,9 @@ function PaginaVenda() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-slate-50 px-5 py-16">
+        <section className="bg-[#fffbf2] px-5 pb-16">
           <div className="mx-auto max-w-md">
-            <h2 className="text-center text-3xl leading-snug text-slate-900">Dúvidas frequentes</h2>
+            <h2 className="text-center text-3xl leading-snug text-[#292524]">Dúvidas frequentes</h2>
             <div className="mt-6 space-y-3">
               <Duvida
                 pergunta="É assinatura?"
@@ -338,35 +343,39 @@ function PaginaVenda() {
         </section>
 
         {/* CTA final */}
-        <section className="bg-gradient-to-t from-[#0f172a] via-[#1e1b4b] to-[#312e81] px-5 py-20 text-center">
+        <section
+          className="px-5 py-20 text-center"
+          style={{
+            background: "linear-gradient(180deg, #431407 0%, #7c2d12 55%, #b45309 100%)",
+          }}>
           <div className="mx-auto max-w-md">
-            <Sun className="mx-auto size-12 text-amber-400" />
-            <h2 className="mt-4 text-3xl italic leading-snug text-amber-300">
+            <Sun className="mx-auto size-12 text-[#fbbf24]" />
+            <h2 className="mt-4 text-3xl italic leading-snug text-[#fde68a]">
               Sua primeira manhã com Deus começa agora.
             </h2>
-            <p className="mt-3 text-lg text-indigo-200">
+            <p className="mt-3 text-lg text-[#ffedd5]">
               Pagamento único de {PRECO}. Acesso imediato. Garantia de 7 dias.
             </p>
             <BotaoComprar className="mt-8 w-full">Quero começar hoje — {PRECO}</BotaoComprar>
           </div>
         </section>
 
-        <footer className="bg-[#0f172a] px-5 pb-4 pt-2 text-center text-xs text-slate-500">
+        <footer className="bg-[#431407] px-5 pb-4 pt-2 text-center text-xs text-[#d6d3d1]">
           <p>Alvorada com Deus · Pagamento processado com segurança pela Cakto</p>
           <p className="mt-2 pb-4">© 2026 Alvorada com Deus. Todos os direitos reservados.</p>
         </footer>
       </div>
 
       {/* Barra fixa de compra */}
-      <div className="fixed inset-x-0 bottom-0 z-30 flex justify-center px-4 pb-4">
-        <div className="flex w-full max-w-xl items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(15,23,42,0.18)] backdrop-blur-lg">
-          <div className="pl-1">
-            <p className="text-[10px] font-bold uppercase tracking-wide text-slate-500">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t-2 border-[#fbbf24]/60 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex w-full max-w-xl items-center justify-between gap-3 px-5 py-3">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#c2410c]">
               Acesso único
             </p>
-            <p className="text-xl font-extrabold tracking-tight text-slate-900">{PRECO}</p>
+            <p className="serif text-2xl font-semibold text-[#292524]">{PRECO}</p>
           </div>
-          <BotaoComprar className="rounded-xl px-6">Quero começar</BotaoComprar>
+          <BotaoComprar className="px-6">Quero começar</BotaoComprar>
         </div>
       </div>
     </div>
