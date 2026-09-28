@@ -117,6 +117,35 @@ function Duvida({ pergunta, resposta }: { pergunta: string; resposta: string }) 
   );
 }
 
+function AvisoNavegador() {
+  const [mostrar, setMostrar] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent || "";
+    const interno = /Instagram|FBAN|FBAV|musical_ly|TikTok|ByteLocale/i.test(ua);
+    if (interno) setMostrar(true);
+  }, []);
+
+  if (!mostrar) return null;
+
+  return (
+    <div className="flex items-start gap-3 bg-[#fde68a] px-4 py-3 text-left">
+      <Smartphone className="mt-0.5 size-4 shrink-0 text-[#7c2d12]" />
+      <p className="flex-1 text-[13px] leading-snug text-[#7c2d12]">
+        Para instalar o app depois da compra, toque nos 3 pontinhos no canto e escolha “Abrir no
+        navegador”.
+      </p>
+      <button
+        type="button"
+        aria-label="Fechar aviso"
+        onClick={() => setMostrar(false)}
+        className="toque -m-1 shrink-0 rounded-full p-1 text-[#7c2d12]/70">
+        <X className="size-4" />
+      </button>
+    </div>
+  );
+}
+
 function PaginaVenda() {
   return (
     <div className="min-h-screen bg-[#fef3c7]">
