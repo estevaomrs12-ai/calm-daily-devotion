@@ -150,6 +150,7 @@ function PaginaVenda() {
   return (
     <div className="min-h-screen bg-[#fef3c7]">
       <div className="mx-auto w-full max-w-xl overflow-x-hidden">
+        <AvisoNavegador />
         {/* Hero */}
         <header className="relative overflow-hidden px-5 pt-10 pb-16 text-center"
           style={{
