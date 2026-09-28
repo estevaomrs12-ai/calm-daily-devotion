@@ -20,6 +20,10 @@ import {
 } from "lucide-react";
 
 import celular from "@/assets/celular-alvorada.png";
+import telaHoje from "@/assets/tela-hoje.jpg";
+import telaPlano from "@/assets/tela-plano.jpg";
+import telaBiblia from "@/assets/tela-biblia.jpg";
+import telaGratidao from "@/assets/tela-gratidao.jpg";
 import { CHECKOUT_CAKTO } from "@/components/Bloqueio";
 
 export const Route = createFileRoute("/comece")({
@@ -73,23 +77,23 @@ function BotaoComprar({
 }
 
 function TelaApp({
-  icone,
+  imagem,
   titulo,
+  alt,
 }: {
-  icone: React.ReactNode;
+  imagem: string;
   titulo: string;
+  alt: string;
 }) {
   return (
     <div className="w-40 shrink-0 snap-center sm:w-44">
-      <div className="flex aspect-[9/18] flex-col items-center justify-center gap-3 rounded-[2rem] border-2 border-dashed border-[#c2410c]/35 bg-gradient-to-b from-[#fff7ed] via-[#ffedd5] to-[#fef3c7] p-4 text-center">
-        <div className="amanhecer flex size-12 items-center justify-center rounded-2xl text-white">
-          {icone}
-        </div>
-        <p className="text-sm font-semibold leading-snug text-[#292524]">{titulo}</p>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
-          print aqui
-        </p>
-      </div>
+      <img
+        src={imagem}
+        alt={alt}
+        loading="lazy"
+        className="aspect-[390/844] w-full rounded-[2rem] border-2 border-[#fbbf24]/40 object-cover shadow-lg"
+      />
+      <p className="mt-2 text-center text-xs font-semibold text-[#78716c]">{titulo}</p>
     </div>
   );
 }
@@ -255,11 +259,26 @@ function PaginaVenda() {
             </p>
           </div>
           <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <TelaApp icone={<Sun className="size-6" />} titulo="Versículo do dia" />
-            <TelaApp icone={<Flame className="size-6" />} titulo="Plano de leitura com ofensiva" />
-            <TelaApp icone={<BookOpen className="size-6" />} titulo="Bíblia completa" />
-            <TelaApp icone={<Sparkles className="size-6" />} titulo="Diário de gratidão" />
-            <TelaApp icone={<Sunrise className="size-6" />} titulo="Devocional de 7 dias" />
+            <TelaApp
+              imagem={telaHoje}
+              titulo="Versículo do dia"
+              alt="Tela do app com o versículo do dia e espaço para anotação"
+            />
+            <TelaApp
+              imagem={telaPlano}
+              titulo="Plano de leitura"
+              alt="Tela do app com os planos de leitura e a ofensiva"
+            />
+            <TelaApp
+              imagem={telaBiblia}
+              titulo="Bíblia completa"
+              alt="Tela do app com a Bíblia completa e busca"
+            />
+            <TelaApp
+              imagem={telaGratidao}
+              titulo="Diário de gratidão"
+              alt="Tela do app com o diário de gratidão"
+            />
           </div>
         </section>
 
