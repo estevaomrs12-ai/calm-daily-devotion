@@ -14,6 +14,9 @@ import {
   Sparkles,
   ChevronDown,
   X,
+  Wallet,
+  Ban,
+  Lock,
 } from "lucide-react";
 
 import celular from "@/assets/celular-alvorada.png";
@@ -66,6 +69,28 @@ function BotaoComprar({
     >
       {children}
     </a>
+  );
+}
+
+function TelaApp({
+  icone,
+  titulo,
+}: {
+  icone: React.ReactNode;
+  titulo: string;
+}) {
+  return (
+    <div className="w-40 shrink-0 snap-center sm:w-44">
+      <div className="flex aspect-[9/18] flex-col items-center justify-center gap-3 rounded-[2rem] border-2 border-dashed border-[#c2410c]/35 bg-gradient-to-b from-[#fff7ed] via-[#ffedd5] to-[#fef3c7] p-4 text-center">
+        <div className="amanhecer flex size-12 items-center justify-center rounded-2xl text-white">
+          {icone}
+        </div>
+        <p className="text-sm font-semibold leading-snug text-[#292524]">{titulo}</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
+          print aqui
+        </p>
+      </div>
+    </div>
   );
 }
 
