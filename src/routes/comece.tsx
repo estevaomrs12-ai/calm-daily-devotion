@@ -14,6 +14,9 @@ import {
   Sparkles,
   ChevronDown,
   X,
+  Wallet,
+  Ban,
+  Lock,
 } from "lucide-react";
 
 import celular from "@/assets/celular-alvorada.png";
@@ -66,6 +69,28 @@ function BotaoComprar({
     >
       {children}
     </a>
+  );
+}
+
+function TelaApp({
+  icone,
+  titulo,
+}: {
+  icone: React.ReactNode;
+  titulo: string;
+}) {
+  return (
+    <div className="w-40 shrink-0 snap-center sm:w-44">
+      <div className="flex aspect-[9/18] flex-col items-center justify-center gap-3 rounded-[2rem] border-2 border-dashed border-[#c2410c]/35 bg-gradient-to-b from-[#fff7ed] via-[#ffedd5] to-[#fef3c7] p-4 text-center">
+        <div className="amanhecer flex size-12 items-center justify-center rounded-2xl text-white">
+          {icone}
+        </div>
+        <p className="text-sm font-semibold leading-snug text-[#292524]">{titulo}</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a8a29e]">
+          print aqui
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -194,6 +219,9 @@ function PaginaVenda() {
               <p className="mt-1 text-sm text-[#78716c]">
                 Sem mensalidade, sem renovação automática, sem cobrança de novo.
               </p>
+              <p className="serif mt-2 text-base italic leading-snug text-[#c2410c]">
+                Menos que um lanche, para começar cada manhã com Deus.
+              </p>
               <BotaoComprar className="mt-5 w-full">Quero começar hoje</BotaoComprar>
               <p className="mt-3 text-center text-sm font-semibold text-[#57534e]">
                 Pagamento único. Sem assinatura. Sem anúncios.
@@ -215,6 +243,25 @@ function PaginaVenda() {
             </div>
           </div>
         </header>
+
+        {/* Veja por dentro */}
+        <section className="bg-[#fffbf2] px-0 pt-16 pb-6">
+          <div className="mx-auto max-w-md px-5">
+            <h2 className="text-center text-3xl leading-snug text-[#292524]">
+              Veja como é por dentro
+            </h2>
+            <p className="mt-3 text-center text-lg text-[#78716c]">
+              Arraste para o lado e conheça as telas do app.
+            </p>
+          </div>
+          <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <TelaApp icone={<Sun className="size-6" />} titulo="Versículo do dia" />
+            <TelaApp icone={<Flame className="size-6" />} titulo="Plano de leitura com ofensiva" />
+            <TelaApp icone={<BookOpen className="size-6" />} titulo="Bíblia completa" />
+            <TelaApp icone={<Sparkles className="size-6" />} titulo="Diário de gratidão" />
+            <TelaApp icone={<Sunrise className="size-6" />} titulo="Devocional de 7 dias" />
+          </div>
+        </section>
 
         {/* Dor */}
         <section className="bg-[#fffbf2] px-5 py-16">
@@ -283,6 +330,47 @@ function PaginaVenda() {
                 titulo="Funciona offline e instala no celular"
                 texto="Adicione à tela de início como um app (Android ou iPhone) e use até sem internet. Seus dados ficam salvos e sincronizam na nuvem quando a conexão volta."
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Diferencial */}
+        <section className="bg-[#fffbf2] px-5 py-16">
+          <div className="mx-auto max-w-md">
+            <h2 className="text-center text-3xl leading-snug text-[#292524]">
+              Por que o Alvorada com Deus?
+            </h2>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              {[
+                {
+                  icone: <Wallet className="size-5" />,
+                  titulo: "Pagamento único",
+                  texto: "Sem assinatura, sem mensalidade.",
+                },
+                {
+                  icone: <Ban className="size-5" />,
+                  titulo: "Sem anúncios",
+                  texto: "Nada de distrações no seu momento com Deus.",
+                },
+                {
+                  icone: <WifiOff className="size-5" />,
+                  titulo: "Funciona offline",
+                  texto: "Leia e ore até sem internet.",
+                },
+                {
+                  icone: <Lock className="size-5" />,
+                  titulo: "Anotações privadas",
+                  texto: "Só você acessa os seus dados.",
+                },
+              ].map(({ icone, titulo, texto }, i) => (
+                <div key={i} className="superficie rounded-3xl p-4">
+                  <div className="amanhecer flex size-9 items-center justify-center rounded-xl text-white">
+                    {icone}
+                  </div>
+                  <p className="mt-3 text-sm font-bold leading-snug text-[#292524]">{titulo}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[#78716c]">{texto}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
