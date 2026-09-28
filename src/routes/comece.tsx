@@ -195,6 +195,9 @@ function PaginaVenda() {
                 Sem mensalidade, sem renovação automática, sem cobrança de novo.
               </p>
               <BotaoComprar className="mt-5 w-full">Quero começar hoje</BotaoComprar>
+              <p className="mt-3 text-center text-sm font-semibold text-[#57534e]">
+                Pagamento único. Sem assinatura. Sem anúncios.
+              </p>
               <ul className="mt-4 space-y-2 text-sm text-[#57534e]">
                 <li className="flex items-center gap-2">
                   <Check className="size-4 shrink-0 text-[#c2410c]" strokeWidth={3} /> Acesso
