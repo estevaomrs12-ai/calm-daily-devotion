@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   BookOpen,
   Sun,
@@ -116,10 +117,40 @@ function Duvida({ pergunta, resposta }: { pergunta: string; resposta: string }) 
   );
 }
 
+function AvisoNavegador() {
+  const [mostrar, setMostrar] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent || "";
+    const interno = /Instagram|FBAN|FBAV|musical_ly|TikTok|ByteLocale/i.test(ua);
+    if (interno) setMostrar(true);
+  }, []);
+
+  if (!mostrar) return null;
+
+  return (
+    <div className="flex items-start gap-3 bg-[#fde68a] px-4 py-3 text-left">
+      <Smartphone className="mt-0.5 size-4 shrink-0 text-[#7c2d12]" />
+      <p className="flex-1 text-[13px] leading-snug text-[#7c2d12]">
+        Para instalar o app depois da compra, toque nos 3 pontinhos no canto e escolha “Abrir no
+        navegador”.
+      </p>
+      <button
+        type="button"
+        aria-label="Fechar aviso"
+        onClick={() => setMostrar(false)}
+        className="toque -m-1 shrink-0 rounded-full p-1 text-[#7c2d12]/70">
+        <X className="size-4" />
+      </button>
+    </div>
+  );
+}
+
 function PaginaVenda() {
   return (
     <div className="min-h-screen bg-[#fef3c7]">
       <div className="mx-auto w-full max-w-xl overflow-x-hidden">
+        <AvisoNavegador />
         {/* Hero */}
         <header className="relative overflow-hidden px-5 pt-10 pb-16 text-center"
           style={{
@@ -135,11 +166,12 @@ function PaginaVenda() {
             </div>
 
             <h1 className="mt-10 text-4xl font-bold leading-tight text-white">
-              Comece cada manhã na <span className="text-[#fde68a]">presença de Deus</span>.
+              Pare de começar e largar a Bíblia{" "}
+              <span className="text-[#fde68a]">no terceiro dia</span>.
             </h1>
             <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-[#ffedd5]/95">
-              Bíblia completa, versículo do dia, plano de leitura com ofensiva, devocional guiado e
-              diário de gratidão — tudo em um só lugar, calmo e simples, direto no seu celular.
+              Um app calmo para criar o hábito de ler a Palavra e orar todos os dias, em apenas 5
+              minutos por manhã.
             </p>
 
             <img
@@ -163,6 +195,9 @@ function PaginaVenda() {
                 Sem mensalidade, sem renovação automática, sem cobrança de novo.
               </p>
               <BotaoComprar className="mt-5 w-full">Quero começar hoje</BotaoComprar>
+              <p className="mt-3 text-center text-sm font-semibold text-[#57534e]">
+                Pagamento único. Sem assinatura. Sem anúncios.
+              </p>
               <ul className="mt-4 space-y-2 text-sm text-[#57534e]">
                 <li className="flex items-center gap-2">
                   <Check className="size-4 shrink-0 text-[#c2410c]" strokeWidth={3} /> Acesso
