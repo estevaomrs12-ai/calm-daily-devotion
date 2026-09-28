@@ -166,11 +166,12 @@ function PaginaVenda() {
             </div>
 
             <h1 className="mt-10 text-4xl font-bold leading-tight text-white">
-              Comece cada manhã na <span className="text-[#fde68a]">presença de Deus</span>.
+              Pare de começar e largar a Bíblia{" "}
+              <span className="text-[#fde68a]">no terceiro dia</span>.
             </h1>
             <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-[#ffedd5]/95">
-              Bíblia completa, versículo do dia, plano de leitura com ofensiva, devocional guiado e
-              diário de gratidão — tudo em um só lugar, calmo e simples, direto no seu celular.
+              Um app calmo para criar o hábito de ler a Palavra e orar todos os dias, em apenas 5
+              minutos por manhã.
             </p>
 
             <img
