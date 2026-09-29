@@ -35,7 +35,7 @@ export const Route = createFileRoute("/comece")({
       {
         name: "description",
         content:
-          "Bíblia completa, versículo do dia, plano de leitura com ofensiva, devocional de 7 dias e diário de gratidão. Pagamento único de R$ 27,90, acesso imediato e garantia de 7 dias.",
+          "Bíblia completa, versículo do dia, plano de leitura com ofensiva, devocional de 7 dias e diário de gratidão. Pagamento único de R$ 19,90, acesso imediato e garantia de 7 dias.",
       },
       {
         property: "og:title",
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/comece")({
       {
         property: "og:description",
         content:
-          "Bíblia completa, versículo do dia, ofensiva de leitura e diário de gratidão. Pagamento único de R$ 27,90 com garantia de 7 dias.",
+          "Bíblia completa, versículo do dia, ofensiva de leitura e diário de gratidão. Pagamento único de R$ 19,90 com garantia de 7 dias.",
       },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://calm-daily-devotion.lovable.app/comece" },
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/comece")({
   component: PaginaVenda,
 });
 
-const PRECO = "R$ 27,90";
+const PRECO = "R$ 19,90";
 
 function BotaoComprar({
   children,
@@ -462,7 +462,7 @@ function PaginaVenda() {
             <div className="mt-6 space-y-3">
               <Duvida
                 pergunta="É assinatura?"
-                resposta="Não. É um pagamento único de R$ 27,90. Sem mensalidade, sem renovação automática, sem surpresa depois."
+                resposta="Não. É um pagamento único de R$ 19,90. Sem mensalidade, sem renovação automática, sem surpresa depois."
               />
               <Duvida
                 pergunta="Funciona no meu celular?"
